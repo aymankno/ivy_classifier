@@ -38,12 +38,12 @@ if uploaded_file:
         output = model(tensor)
         _, predicted = torch.max(output, 1)
 
-    probabilities = torch.nn.functional.softmax(output, dim=1)
-confidence = probabilities[0][predicted.item()].item()
+        probabilities = torch.nn.functional.softmax(output, dim=1)
+        confidence = probabilities[0][predicted.item()].item()
 
-if confidence < 0.85:
-    st.subheader("That is NOT a cat.")
-elif predicted.item() == 0:
-    st.subheader(f"😻😻 It's Ivy!! 😻😻 ({confidence*100:.1f}% confident)")
-else:
-    st.subheader(f"😿 Not Ivy. 😿 ({confidence*100:.1f}% confident)")
+    if confidence < 0.85:
+        st.subheader("That is NOT a cat.")
+    elif predicted.item() == 0:
+        st.subheader(f"😻😻 It's Ivy!! 😻😻 ({confidence*100:.1f}% confident)")
+    else:
+        st.subheader(f"😿 Not Ivy. 😿 ({confidence*100:.1f}% confident)")
