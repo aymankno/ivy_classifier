@@ -42,7 +42,7 @@ if uploaded_file:
         confidence = probabilities[0][predicted.item()].item()
 
     if confidence < 0.98:
-        st.subheader("That doesn't look like a cat.")
+        st.subheader("Not Ivy 😿")
     elif predicted.item() == 0:
         st.subheader(f"Ivy - ({confidence*100:.1f}% confident)")
     else:
