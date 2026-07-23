@@ -24,7 +24,7 @@ transform = transforms.Compose([
 ])
 
 st.title("Is it Ivy??")
-st.write("Upload a photo and find out if it's her! 😻")
+st.write(f"Upload a photo and find out if it's her! 99.65% accuracy! 😻")
 
 uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
 
@@ -38,5 +38,5 @@ if uploaded_file:
         output = model(tensor)
         _, predicted = torch.max(output, 1)
     
-    label = "🐱 That's Ivy!" if predicted.item() == 0 else "❌ Not Ivy"
+    label = "😻😻 It's Ivy!! 😻😻" if predicted.item() == 0 else "😿 Not Ivy. 😿"
     st.subheader(label)
