@@ -24,7 +24,7 @@ transform = transforms.Compose([
 ])
 
 st.title("Is it Ivy??")
-st.write(f"Upload a photo and find out if it's her! 99.65% accuracy! 😻")
+st.write(f"Upload a photo and find out if it's her! 😻")
 
 uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
 
@@ -42,7 +42,7 @@ if uploaded_file:
         confidence = probabilities[0][predicted.item()].item()
 
     if confidence < 0.98:
-        st.subheader("That is NOT a cat.")
+        st.subheader("That doesn't look like a cat.")
     elif predicted.item() == 0:
         st.subheader(f"Ivy - ({confidence*100:.1f}% confident)")
     else:
