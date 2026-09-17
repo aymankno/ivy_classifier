@@ -1,4 +1,4 @@
-# ivy_classifie
+# ivy_classifier
 
 Binary image classifier that distinguishes my cat Ivy from other cats.
 
