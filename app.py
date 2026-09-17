@@ -30,7 +30,7 @@ uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
 
 if uploaded_file:
     img = Image.open(uploaded_file).convert('RGB')
-    st.image(img, caption="Uploaded image", use_column_width=True)
+    st.image(img, caption="Uploaded image", use_container_width=True)
     
     tensor = transform(img).unsqueeze(0)
     
